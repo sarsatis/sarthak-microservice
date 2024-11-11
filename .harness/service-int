@@ -1,0 +1,6 @@
+pipeline:
+  name: sarthak-microservice
+  identifier: sarthak-microservice
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
