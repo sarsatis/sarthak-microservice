@@ -1,0 +1,29 @@
+service:
+  name: {repo_name}
+  identifier: {repo_name}
+  orgIdentifier: default
+  projectIdentifier: default_project
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: INT
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: account.Github_OAuth_1719255138258
+                  gitFetchType: Branch
+                  folderPath: "/helm-charts/helm-charts"
+                  repoName: helm-charts
+                  branch: master
+              subChartPath: ""
+              valuesPaths:
+              - manifests/sarthak-microservice/sit/configmap/configmap.yaml
+              - manifests/sarthak-microservice/sit/immutable/values.yaml
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V3
+              fetchHelmChartMetadata: false
+    type: Kubernetes
